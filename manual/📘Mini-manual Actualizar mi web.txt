@@ -1,0 +1,23 @@
+📘 Mini-manual "Actualizar mi web"
+Después de cualquier cambio en tu PC
+1. Guardar cambios en GitHub
+Abre tu terminal(pc) en la carpeta del proyecto y ejecuta:
+
+git add .
+git commit -m "Lo que hice (ej. fix fondo móvil)"
+git push
+
+2. Entrar al servidor
+Abre MobaXterm → conéctate con tu servidor.
+
+3. Actualizar la web
+Copia-pega estas líneas una por una:
+
+cd /var/www/congresominero
+sudo git restore .              # borra archivos locales viejos
+sudo git pull                   # trae tu nueva versión
+sudo chown -R www-data:www-data .
+sudo chmod -R 755 .
+4. Verificar
+Recarga tu sitio en el móvil o PC → los cambios ya están en línea.
+¡Listo! Cada vez que edites algo repite solo los pasos 1 y 3.

@@ -49,7 +49,7 @@ body {
 
 /* ===== NAVBAR MODERNA MEJORADA - ESTILOS GENERALES ===== */
 .navbar.navbar-expand-lg.navbar-dark.bg-dark {
-    background: linear-gradient(135deg, #1a2533 0%, #141c2b 50%, #0f1420 100%) !important;
+    background: linear-gradient(135deg, #143464 0%, #0B629C 100%) !important;
     border-bottom: 1px solid rgba(225, 185, 115, 0.3) !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
     backdrop-filter: blur(10px) !important;
@@ -239,23 +239,23 @@ body {
 
 /* Hero Section */
 .hero-section {
+    margin-top: -60px;
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)); /* Muy claro */
-    min-height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: start;
     justify-content: center;
     color: var(--off-white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    padding-top: 5vh;
+    padding: 2vh 0;
 }
 
 #titulo-principal {
     text-align: center;
-    margin: 40px 0;
+    margin: 0;
 }
 
 .logo-entrada {
-    max-width: 50%;
+    max-width: 73.44%;
     height: auto;
     opacity: 0;
     transform: scale(0.9);
@@ -271,7 +271,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     color: var(--bright-yellow-accent);
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 /* General Headings */
@@ -310,6 +310,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-section .lead {
     text-align: center !important;
+    margin-top: 0.5rem;
 }
 
 /* Buttons */
@@ -357,6 +358,10 @@ section:nth-of-type(even) {
     background-color: var(--midnight-blue-translucent);
 }
 
+#precios {
+    background-color: transparent !important;
+}
+
 /* Feature Box */
 .feature-box h3 {
     color: var(--bright-yellow-accent);
@@ -392,8 +397,8 @@ section:nth-of-type(even) {
 
 /* Pricing Card */
 .pricing-card {
-    background-color: var(--midnight-blue-translucent);
-    color: var(--off-white);
+    background-color: rgba(20, 28, 43, 0.7);
+    color: var(--dark-blue-deep);
     border: 1px solid var(--golden-medium);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -408,7 +413,7 @@ section:nth-of-type(even) {
     color: var(--dark-blue-deep);
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    padding: 1rem;
+    padding: 0.5rem;
     border-bottom: none;
 }
 
@@ -438,9 +443,13 @@ section:nth-of-type(even) {
     background-color: var(--midnight-blue-translucent);
     color: var(--off-white);
     border: 1px solid var(--golden-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#testimonios .blockquote-footer {
+#testimonios .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
     color: var(--golden-light);
 }
 
@@ -464,7 +473,7 @@ section:nth-of-type(even) {
 
 /* Footer */
 footer {
-    background-color: var(--dark-blue-deep) !important;
+    background-color: #0D3C74 !important;
     border-top: 1px solid var(--midnight-blue-translucent);
     color: var(--off-white);
 }
