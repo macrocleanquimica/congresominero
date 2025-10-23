@@ -119,7 +119,7 @@ function handleMobileMenu() {
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 992) {
+                if (window.innerWidth < 992 && !link.classList.contains('dropdown-toggle')) {
                     const bsCollapse = new bootstrap.Collapse(navbarCollapse);
                     bsCollapse.hide();
                 }
