@@ -76,7 +76,7 @@ function updateActiveNavLink() {
     /*  NUEVO COMPORTAMIENTO DEL LOGO  */
     if (logo) {
         logo.classList.add('visible');           // 1) siempre visible al cargar
-        const OFFSET_HIDE = 120;                 // px que debe bajar para ocultarse
+        const OFFSET_HIDE = 400;                 // px que debe bajar para ocultarse
         if (window.scrollY > OFFSET_HIDE) {
             logo.classList.remove('visible');    // se oculta
         } else {
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.logo-entrada');
   if (logo) logo.classList.add('visible');
     // Title animations
-    ['conferencias-titulo', 'programa-titulo'].forEach(id => {
+    ['conferencias-titulo', 'programa-titulo', 'hotel-hampton-titulo', 'hotel-victoria-titulo'].forEach(id => {
         if (document.getElementById(id)) animateTitle(id);
     });
 

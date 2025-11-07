@@ -7,399 +7,434 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos adicionales solo para las tarjetas de hoteles */
+        #hoteles .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #hoteles .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #hoteles .hotel-logo {
+            max-height: 120px;
+            width: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        #hoteles .card-text {
+            flex-grow: 1;
+        }
+        
+        .hotel-logo {
+            border-radius: 8px;
+        }
+    </style>
 </head>
-<body>
+<body class="registro-page">
     <main class="content-wrapper">
-    <!-- Navbar Corregida -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="img/Logo_Horizontal.png" alt="CONGRESO NACIONAL DE MINERIA Durango 2026" style="height: 78px; filter: brightness(0) invert(1);"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Congreso
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownCongreso">
-                        <li><a class="dropdown-item" href="index.html#mapa">Mapa</a></li>
-                        <li><a class="dropdown-item" href="Programa.html">Programa</a></li>
-                        <li><a class="dropdown-item" href="Conferencias.html">Conferencias</a></li>
+        <!-- Navbar Corregida -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="img/Logo_Horizontal.png" alt="CONGRESO NACIONAL DE MINERIA Durango 2026" style="height: 78px; filter: brightness(0) invert(1);"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Congreso
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownCongreso">
+                                <li><a class="dropdown-item" href="mapa.html">Mapa</a></li>
+                                <li><a class="dropdown-item" href="Programa.html">Programa</a></li>
+                                <li><a class="dropdown-item" href="Conferencias.html">Conferencias</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdownExpo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Expo
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownExpo">
+                                <li><a class="dropdown-item" href="index.html#expo-comercial">Comercial</a></li>
+                                <li><a class="dropdown-item" href="index.html#expo-maquinaria">Maquinaria</a></li>
+                                <li><a class="dropdown-item" href="index.html#expo-minerales">Minerales</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdownActividades" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Actividades
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownActividades">
+                                <li><a class="dropdown-item" href="index.html#comite-damas">Comité de Damas</a></li>
+                                <li><a class="dropdown-item" href="index.html#carrera">Carrera México Minero</a></li>
+                                <li><a class="dropdown-item" href="index.html#cocteles">Cocteles</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#sede">Sede</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#hoteles">Hoteles</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#patrocinios">Patrocinios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
                     </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdownExpo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Expo
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownExpo">
-                        <li><a class="dropdown-item" href="index.html#expo-comercial">Comercial</a></li>
-                        <li><a class="dropdown-item" href="index.html#expo-maquinaria">Maquinaria</a></li>
-                        <li><a class="dropdown-item" href="index.html#expo-minerales">Minerales</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdownActividades" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Actividades
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownActividades">
-                        <li><a class="dropdown-item" href="index.html#comite-damas">Comité de Damas</a></li>
-                        <li><a class="dropdown-item" href="index.html#carrera">Carrera México Minero</a></li>
-                        <li><a class="dropdown-item" href="index.html#cocteles">Cocteles</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="index.html#sede">Sede</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#hoteles">Hoteles</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#patrocinios">Patrocinios</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-    <!-- Hero Section -->
-<header id="inicio" class="hero-section text-white text-center">
-    <div class="container">
-        <div id="titulo-principal" class="display-3 fw-bold">
-            <img src="img/Logo_Condensado.png" alt="Logo del Congreso" class="logo-entrada">
-        </div>
-        <h1 class="titulo-estilo" style="font-size:1.5rem;">VIII FERIA DE MINERALES ROCAS Y FÓSILES</h1>
-        <p class="lead">Del 26 al 28 de Agosto 2026</p>
-        <a href="registro.html" class="btn btn-primary btn-lg mt-3">Regístrate ahora</a>
-    </div>
-</header>
-
-    <!-- About/Highlights Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-center section-heading fade-in">Sobre el Congreso</h2>
-                    <p class="lead">Es un congreso de amplio reconocimiento nacional e internacional que reúne a más de 150 proveedores del sector minero -metalúrgico, así como a múltiples compañías mineras con proyectos activos y por desarrollar en los estados mineros de la República Mexicana, contando con una afluencia promedio de 1,500 congresistas de diversas nacionalidades.</p>
-                    <p class="lead">Por lo anterior, este Congreso se ha convertido en un excelente recinto de oportunidades comerciales, ya que promueve eficientemente la vinculación entre expositores(proveedores) y clientes potenciales del sector minero, con lo cual también apoya el desarrollo de MiPyMEs de este importante sector.</p>
                 </div>
             </div>
-            <div class="row text-center mt-5">
-                <div class="col-md-3">
-                    <div class="feature-box">
-                        <h3>200+</h3>
-                        <p>Ponentes Expertos</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-box">
-                        <h3>3 Días</h3>
-                        <p>De Inspiración</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-box">
-                        <h3>150+</h3>
-                        <p>Talleres Únicos</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-box">
-                        <h3>20+</h3>
-                        <p>Oportunidades de Networking</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </nav>
 
-    <!-- Speakers Section -->
-    <section id="ponentes" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Nuestros Ponentes</h2>
-            <div class="row mt-4 justify-content-center">
-                <div class="col-md-4 mb-4 speaker-card-animated fade-in">
-                    <div class="card text-center">
-                        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Ponente 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre Ponente 1</h5>
-                            <p class="card-text">Experto en Geología Minera</p>
-                        </div>
+        <!-- Hero Section -->
+        <header id="inicio" class="hero-section text-white text-center">
+            <div class="container">
+                <p class="lead">Del 26 al 28 de Agosto 2026</p>
+                <div id="titulo-principal" class="display-3 fw-bold">
+                    <img src="img/Logo_Condensado.png" alt="Logo del Congreso" class="logo-entrada">
+                </div>
+                <h1 class="titulo-estilo" style="font-size:2.5rem; margin-top:-2.5rem;">EQUIDAD EN LA MINERÍA</h1>
+                <a href="registro.html" class="btn btn-primary btn-lg mt-3">Regístrate ahora</a>
+            </div>
+        </header>
+
+        <!-- About/Highlights Section -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-center section-heading fade-in">Sobre el Congreso</h2>
+                        <p class="lead">Es un congreso de amplio reconocimiento nacional e internacional que reúne a más de 150 proveedores del sector minero -metalúrgico, así como a múltiples compañías mineras con proyectos activos y por desarrollar en los estados mineros de la República Mexicana, contando con una afluencia promedio de 1,500 congresistas de diversas nacionalidades.</p>
+                        <p class="lead">Por lo anterior, este Congreso se ha convertido en un excelente recinto de oportunidades comerciales, ya que promueve eficientemente la vinculación entre expositores(proveedores) y clientes potenciales del sector minero, con lo cual también apoya el desarrollo de MiPyMEs de este importante sector.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4 speaker-card-animated fade-in">
-                    <div class="card text-center">
-                        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Ponente 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre Ponente 2</h5>
-                            <p class="card-text">Especialista en Sostenibilidad</p>
+                <div class="row text-center mt-5">
+                    <div class="col-md-3">
+                        <div class="feature-box">
+                            <h3>200+</h3>
+                            <p>Ponentes Expertos</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4 speaker-card-animated fade-in">
-                    <div class="card text-center">
-                        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Ponente 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre Ponente 3</h5>
-                            <p class="card-text">Innovación Tecnológica</p>
+                    <div class="col-md-3">
+                        <div class="feature-box">
+                            <h3>3 Días</h3>
+                            <p>De Inspiración</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-box">
+                            <h3>150+</h3>
+                            <p>Talleres Únicos</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-box">
+                            <h3>124</h3>
+                            <p>Stands disponibles</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing Section -->
-    <section id="precios" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Inscripciones</h2>
-            <div class="row mt-4 justify-content-center">
-                <div class="col-md-4 mb-4 fade-in">
-                                    <div class="card text-center pricing-card">
-                                        <div class="card-header">
-                                            <h3>Asociado</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">$1,100.00</h4>
-                                            <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
-                                        </div>
-                                    </div>
-                                </div><div class="col-md-4 mb-4 fade-in">
-                    <div class="card text-center pricing-card">
-                        <div class="card-header">
-                            <h3>No Asociado</h3>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">$1,400.00</h4>
-                            <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
+        <!-- Speakers Section -->
+        <section id="ponentes" class="py-5">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Nuestros Ponentes</h2>
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-md-4 mb-4 speaker-card-animated fade-in">
+                        <div class="card text-center">
+                            <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Ponente 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre Ponente 1</h5>
+                                <p class="card-text">Experto en Geología Minera</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4 fade-in">
-                                    <div class="card text-center pricing-card">
-                                        <div class="card-header">
-                                            <h3>Estudiante</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">$800.00</h4>
-                                            <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
-                                        </div>
-                                    </div>
-                                </div><div class="col-md-4 mb-4 fade-in">
-                    <div class="card text-center pricing-card">
-                        <div class="card-header">
-                            <h3>Acompañantes Comite de Damas</h3>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">$800.00</h4>
-                            <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
+                    <div class="col-md-4 mb-4 speaker-card-animated fade-in">
+                        <div class="card text-center">
+                            <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Ponente 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre Ponente 2</h5>
+                                <p class="card-text">Especialista en Sostenibilidad</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4 fade-in">
-                                    <div class="card text-center pricing-card">
-                                        <div class="card-header">
-                                            <h3>Gafete Adicional Expositor</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">$1,100.00</h4>
-                                            <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
-                                        </div>
-                                    </div>
-                                </div>            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonios" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Lo que dicen de nosotros</h2>
-            <div class="row mt-4">
-                <div class="col-md-4 mb-4 fade-in">
-                    <div class="card text-center p-3">
-                        <p class="fst-italic">"¡Presentación muy interesante!"</p>
-                        <footer class="blockquote-footer">Mikky Peterson</footer>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 fade-in">
-                    <div class="card text-center p-3">
-                        <p class="fst-italic">"¡Un evento excelente y muy bien organizado!"</p>
-                        <footer class="blockquote-footer">Christian Grant</footer>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 fade-in">
-                    <div class="card text-center p-3">
-                        <p class="fst-italic">"¡Conferencia increíble, con información muy valiosa!"</p>
-                        <footer class="blockquote-footer">Nina Larinson</footer>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Placeholder Sections for Congreso, Expo, Actividades, Sede, Hoteles -->
-    <section id="congreso" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Congreso</h2>
-            <p class="text-center lead">Detalles sobre el mapa, programa y conferencias se anunciarán pronto.</p>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <h3>Mapa</h3>
-                    <p>Próximamente disponible el mapa interactivo del evento.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Programa</h3>
-                    <p>Consulta el programa completo de actividades y ponencias.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Conferencias</h3>
-                    <p>Descubre los cursos precongreso, conferencias técnicas y magistrales.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="expo" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Expo</h2>
-            <p class="text-center lead">Explora nuestras áreas de exposición.</p>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <h3>Expo Comercial</h3>
-                    <p>Conoce a los principales proveedores de la industria minera.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Expo Maquinaria</h3>
-                    <p>Descubre la última tecnología en maquinaria pesada.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Expo Minerales</h3>
-                    <p>Una muestra fascinante de minerales, rocas y fósiles.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="actividades" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Actividades</h2>
-            <p class="text-center lead">Participa en nuestras actividades especiales.</p>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <h3>Comité de Damas</h3>
-                    <p>Actividades y eventos organizados por el Comité de Damas.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Carrera México Minero</h3>
-                    <p>Únete a la carrera por la minería responsable.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Cocteles</h3>
-                    <p>Disfruta de nuestros cocteles de bienvenida y clausura.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="sede" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Sede del Evento</h2>
-            <!--<p class="text-center lead">El CONGRESO NACIONAL DE MINERIA Durango 2026 se llevará a cabo en:</p> -->
-            <address class="text-center"> 
-                <strong>Centro Cultural y de Convenciones Bicentenario</strong><br>
-               <br>
-                Durango, Dgo., México<br>
-            </address>
-            <div class="text-center mt-4">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3643.905496646607!2d-104.68421192397102!3d24.034397477813094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bc83805555555%3A0x20a6d0f0a56b1cc4!2sCentro%20Cultural%20y%20de%20Convenciones%20Bicentenario!5e0!3m2!1ses-419!2smx!4v1761145427953!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>        </div>
-    </section>
-
-    <section id="hoteles" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Hoteles Recomendados</h2>
-            <p class="text-center lead">Pronto tendremos una lista de hoteles con tarifas especiales para los asistentes.</p>
-            <div class="row mt-4">
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Hotel Ejemplo 1</h5>
-                            <p class="card-text">Descripción breve del hotel y sus servicios.</p>
-                            <a href="#" class="btn btn-outline-primary">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Hotel Ejemplo 2</h5>
-                            <p class="card-text">Descripción breve del hotel y sus servicios.</p>
-                            <a href="#" class="btn btn-outline-primary">Ver detalles</a>
+                    <div class="col-md-4 mb-4 speaker-card-animated fade-in">
+                        <div class="card text-center">
+                            <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Ponente 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre Ponente 3</h5>
+                                <p class="card-text">Innovación Tecnológica</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sponsors Section -->
-    <section id="patrocinios" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Nuestros Patrocinadores</h2>
-            <p class="text-center lead">Agradecemos el apoyo de nuestros valiosos patrocinadores.</p>
-            <div class="row mt-4 justify-content-center align-items-center">
-                <!-- Placeholder for sponsor logos -->
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="https://via.placeholder.com/100x50?text=Patrocinador+1" alt="Patrocinador 1" class="img-fluid">
+        <!-- Pricing Section -->
+        <section id="precios" class="py-5">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Inscripciones</h2>
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="card text-center pricing-card">
+                            <div class="card-header">
+                                <h3>Asociado</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">$1,100.00</h4>
+                                <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="card text-center pricing-card">
+                            <div class="card-header">
+                                <h3>No Asociado</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">$1,400.00</h4>
+                                <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="card text-center pricing-card">
+                            <div class="card-header">
+                                <h3>Estudiante</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">$800.00</h4>
+                                <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="card text-center pricing-card">
+                            <div class="card-header">
+                                <h3>Acompañantes Comite de Damas</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">$800.00</h4>
+                                <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="card text-center pricing-card">
+                            <div class="card-header">
+                                <h3>Gafete Adicional Expositor</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">$1,100.00</h4>
+                                <a href="registro.html" class="btn btn-outline-primary">Registrarse</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="https://via.placeholder.com/100x50?text=Patrocinador+2" alt="Patrocinador 2" class="img-fluid">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="https://via.placeholder.com/100x50?text=Patrocinador+3" alt="Patrocinador 3" class="img-fluid">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="https://via.placeholder.com/100x50?text=Patrocinador+4" alt="Patrocinador 4" class="img-fluid">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="https://via.placeholder.com/100x50?text=Patrocinador+5" alt="Patrocinador 5" class="img-fluid">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="https://via.placeholder.com/100x50?text=Patrocinador+6" alt="Patrocinador 6" class="img-fluid">
-                </div>
-                <!-- Add more as needed -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="py-5 bg-dark text-white">
-        <div class="container">
-            <h2 class="text-center section-heading fade-in">Contáctanos</h2>
-            <div class="row mt-4">
-                <div class="col-md-6 mx-auto text-center">
-                    <p><strong>Ing. Nanci Pérez</strong><br>Gerente General del Distrito</p>
-                    <p><i class="fas fa-envelope"></i> Correo electrónico: <a href="mailto:infocongresodurango@gmail.com" class="text-white">infocongresodurango@gmail.com</a></p>
-                    <p><i class="fas fa-phone"></i> Tel. <a href="tel:+526184551573" class="text-white">(618) 455 1573</a> / Cel. <a href="tel:+526181523876" class="text-white">(618) 152 3876</a></p>
+        <!-- Testimonials Section -->
+        <section id="testimonios" class="py-5">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Lo que dicen de nosotros</h2>
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="card text-center p-3">
+                            <p class="fst-italic">"¡Presentación muy interesante!"</p>
+                            <footer class="blockquote-footer">Mikky Peterson</footer>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="card text-center p-3">
+                            <p class="fst-italic">"¡Un evento excelente y muy bien organizado!"</p>
+                            <footer class="blockquote-footer">Christian Grant</footer>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="card text-center p-3">
+                            <p class="fst-italic">"¡Conferencia increíble, con información muy valiosa!"</p>
+                            <footer class="blockquote-footer">Nina Larinson</footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder Sections for Congreso, Expo, Actividades, Sede, Hoteles -->
+        <section id="congreso" class="py-5">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Congreso</h2>
+                <p class="text-center lead">Detalles sobre el mapa, programa y conferencias se anunciarán pronto.</p>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <h3>Mapa</h3>
+                        <p>Próximamente disponible el mapa interactivo del evento.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Programa</h3>
+                        <p>Consulta el programa completo de actividades y ponencias.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Conferencias</h3>
+                        <p>Descubre los cursos precongreso, conferencias técnicas y magistrales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="expo" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Expo</h2>
+                <p class="text-center lead">Explora nuestras áreas de exposición.</p>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <h3>Expo Comercial</h3>
+                        <p>Conoce a los principales proveedores de la industria minera.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Expo Maquinaria</h3>
+                        <p>Descubre la última tecnología en maquinaria pesada.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Expo Minerales</h3>
+                        <p>Una muestra fascinante de minerales, rocas y fósiles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="actividades" class="py-5">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Actividades</h2>
+                <p class="text-center lead">Participa en nuestras actividades especiales.</p>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <h3>Comité de Damas</h3>
+                        <p>Actividades y eventos organizados por el Comité de Damas.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Carrera México Minero</h3>
+                        <p>Únete a la carrera por la minería responsable.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Cocteles</h3>
+                        <p>Disfruta de nuestros cocteles de bienvenida y clausura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sede" class="py-5">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Sede del Evento</h2>
+                <address class="text-center"> 
+                    <strong>Centro Cultural y de Convenciones Bicentenario</strong><br>
                     <br>
-                    <p><strong>Ing. Juan Morales Gómez</strong><br>Presidente del Consejo Directivo Local</p>
-                    <p><i class="fas fa-envelope"></i> Correo electrónico: <a href="mailto:presidente.distritodurango@gmail.com" class="text-white">presidente.distritodurango@gmail.com</a></p>
-                    <p><i class="fas fa-phone"></i> Tel. <a href="tel:+526184551573" class="text-white">(618) 455 1573</a> / Cel. <a href="tel:+526188236797" class="text-white">(618) 823 6797</a></p>
-                    <div class="social-icons mt-3">
-                        <a href="https://www.facebook.com/congresominerodurango" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f fa-2x"></i></a>
-                        <!-- Add more social media icons if needed -->
+                    Durango, Dgo., México<br>
+                </address>
+                <div class="text-center mt-4">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3643.905496646607!2d-104.68421192397102!3d24.034397477813094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bc83805555555%3A0x20a6d0f0a56b1cc4!2sCentro%20Cultural%20y%20de%20Convenciones%20Bicentenario!5e0!3m2!1ses-419!2smx!4v1761145427953!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <div class="container">
-            <p class="mb-0">Copyright &copy; 2023 CONGRESO NACIONAL DE MINERIA Durango 2026 | Todos los derechos reservados</p>
-        </div>
-    </footer>
+        <!-- Hoteles Section - Corregida -->
+        <section id="hoteles" class="py-5">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Hoteles Recomendados</h2>
+                <p class="text-center lead">Pronto tendremos una lista de hoteles con tarifas especiales para los asistentes.</p>
+                <div class="row mt-4 align-items-stretch justify-content-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Hotel Hampton</h5>
+                                <p class="card-text">Descripción breve del hotel y sus servicios.</p>
+                                <img src="img/hampton.jpeg" alt="Logo Hotel Hampton" class="img-fluid mb-3 hotel-logo">
+                                <a href="hotel-hampton.html" class="btn btn-outline-primary">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Hotel Victoria Express</h5>
+                                <p class="card-text">Descripción breve del hotel y sus servicios.</p>
+                                <img src="img/victoriaexpres.jpeg" alt="Logo Hotel Victoria Express" class="img-fluid mb-3 hotel-logo">
+                                <a href="hotel-victoria-express.html" class="btn btn-outline-primary">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors Section -->
+        <section id="patrocinios" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Nuestros Patrocinadores</h2>
+                <p class="text-center lead">Agradecemos el apoyo de nuestros valiosos patrocinadores.</p>
+                <div class="row mt-4 justify-content-center align-items-center">
+                    <!-- Placeholder for sponsor logos -->
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="https://via.placeholder.com/100x50?text=Patrocinador+1" alt="Patrocinador 1" class="img-fluid">
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="https://via.placeholder.com/100x50?text=Patrocinador+2" alt="Patrocinador 2" class="img-fluid">
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="https://via.placeholder.com/100x50?text=Patrocinador+3" alt="Patrocinador 3" class="img-fluid">
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="https://via.placeholder.com/100x50?text=Patrocinador+4" alt="Patrocinador 4" class="img-fluid">
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="https://via.placeholder.com/100x50?text=Patrocinador+5" alt="Patrocinador 5" class="img-fluid">
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="https://via.placeholder.com/100x50?text=Patrocinador+6" alt="Patrocinador 6" class="img-fluid">
+                    </div>
+                    <!-- Add more as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="py-5 bg-dark text-white">
+            <div class="container">
+                <h2 class="text-center section-heading fade-in">Contáctanos</h2>
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <p><strong>Ing. Nanci Pérez</strong><br>Gerente General del Distrito</p>
+                        <p><i class="fas fa-envelope"></i> Correo electrónico: <a href="mailto:infocongresodurango@gmail.com" class="text-white">infocongresodurango@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> Tel. <a href="tel:+526184551573" class="text-white">(618) 455 1573</a> / Cel. <a href="tel:+526181523876" class="text-white">(618) 152 3876</a></p>
+                        <br>
+                        <p><strong>Ing. Juan Morales Gómez</strong><br>Presidente del Consejo Directivo Local</p>
+                        <p><i class="fas fa-envelope"></i> Correo electrónico: <a href="mailto:presidente.distritodurango@gmail.com" class="text-white">presidente.distritodurango@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> Tel. <a href="tel:+526184551573" class="text-white">(618) 455 1573</a> / Cel. <a href="tel:+526188236797" class="text-white">(618) 823 6797</a></p>
+                        <div class="social-icons mt-3">
+                            <a href="https://www.facebook.com/congresominerodurango" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f fa-2x"></i></a>
+                            <!-- Add more social media icons if needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-3">
+            <div class="container">
+                <p class="mb-0">Copyright &copy; 2023 CONGRESO NACIONAL DE MINERIA Durango 2026 | Todos los derechos reservados</p>
+            </div>
+        </footer>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

@@ -17,28 +17,18 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--off-white);
-    background:
-        /* 1) Capa radial: claro al centro, oscuro a las orillas */
-        radial-gradient(
-            ellipse at center,
-            rgba(247, 246, 243, 0.85) 0%,        /* casi blanco (#f7f6f3 = off-white) */
-            rgba(247, 246, 243, 0.55) 35%,
-            rgba(32, 45, 70, 0.35) 70%,
-            rgba(20, 28, 43, 0.95) 100%
-        ),
-        /* 2) Imagen de fondo */
-        url('img/fondo_minero.jpg') no-repeat center center fixed;
+    background-color: var(--dark-blue-deep);
+}
+
+.fondo-responsivo {
+    background: url('img/fondo_minero.jpg') no-repeat center center;
     background-size: cover;
-    background-attachment: fixed;
-}/* Añadir este elemento para registro.html */
-#background-fade {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    z-index: 0;
+}
+
+@media (min-width: 769px) {
+    .fondo-responsivo {
+        background-attachment: fixed;
+    }
 }
 
 .content-wrapper {
@@ -240,13 +230,13 @@ body {
 /* Hero Section */
 .hero-section {
     margin-top: -60px;
-    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)); /* Muy claro */
+    background: transparent; /* Muy claro */
     display: flex;
     align-items: start;
     justify-content: center;
     color: var(--off-white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    padding: 2vh 0;
+    padding: 80px 0 2vh 0;
 }
 
 #titulo-principal {
@@ -259,7 +249,7 @@ body {
     height: auto;
     opacity: 0;
     transform: scale(0.9);
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .logo-entrada.visible {
@@ -310,7 +300,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-section .lead {
     text-align: center !important;
-    margin-top: 0.5rem;
+    margin-top: 0;
+    margin-bottom: -4rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Buttons */
@@ -333,9 +326,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-outline-primary {
-    color: var(--golden-light);
+    color: var(--dark-blue-deep);
+    background-color: var(--golden-light);
     border-color: var(--golden-light);
-    background-color: transparent;
     font-weight: bold;
     padding: 0.8rem 2rem;
     border-radius: 5px;
@@ -343,8 +336,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--golden-light);
+    background-color: var(--golden-medium);
     color: var(--dark-blue-deep);
+    border-color: var(--golden-medium);
     transform: translateY(-2px);
 }
 
@@ -417,6 +411,10 @@ section:nth-of-type(even) {
     border-bottom: none;
 }
 
+.pricing-card .card-header h3 {
+    color: var(--dark-blue-deep);
+}
+
 .pricing-card .card-title {
     color: var(--bright-yellow-accent);
     font-family: 'Cinzel', serif;
@@ -480,7 +478,7 @@ footer {
 
 /* Registro Page Specific Styles */
 .registro-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/fondo_minero.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('img/fondo_minero.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
@@ -566,7 +564,9 @@ hr {
 
 /* Estilos para títulos animados en Conferencias y Programa */
 #conferencias-titulo,
-#programa-titulo {
+#programa-titulo,
+#hotel-hampton-titulo,
+#hotel-victoria-titulo {
     text-align: center;
     font-family: 'Cinzel', 'Playfair Display', serif;
     font-weight: 700;
@@ -581,7 +581,9 @@ hr {
 }
 
 #conferencias-titulo span,
-#programa-titulo span {
+#programa-titulo span,
+#hotel-hampton-titulo span,
+#hotel-victoria-titulo span {
     opacity: 0;
     filter: blur(10px);
     transform: translateY(-50px);
@@ -595,7 +597,9 @@ hr {
 }
 
 #conferencias-titulo span.is-visible,
-#programa-titulo span.is-visible {
+#programa-titulo span.is-visible,
+#hotel-hampton-titulo span.is-visible,
+#hotel-victoria-titulo span.is-visible {
     opacity: 1;
     filter: blur(0px);
     transform: translateY(0);
@@ -620,13 +624,13 @@ body:not(.registro-page) .navbar-dark .nav-link:hover {
     background: rgba(255, 210, 94, 0.15) !important;
 }
 
-.registro-page .navbar-dark .dropdown-toggle::after,
-body:not(.registro-page) .navbar-dark .dropdown-toggle::after {
+.registro-page .dropdown-toggle::after,
+body:not(.registro-page) .dropdown-toggle::after {
     border-top-color: var(--golden-light) !important;
 }
 
-.registro-page .navbar-dark .nav-link.active,
-body:not(.registro-page) .navbar-dark .nav-link.active {
+.registro-page .nav-link.active,
+body:not(.registro-page) .nav-link.active {
     color: var(--bright-yellow-accent) !important;
     background: linear-gradient(135deg, rgba(255, 210, 94, 0.2), rgba(225, 185, 115, 0.3)) !important;
 }
@@ -637,9 +641,6 @@ body:not(.registro-page) .navbar {
     z-index: 1001 !important;
 }
 
-.registro-page #background-fade {
-    z-index: 0 !important;
-}
 
 /* Responsiveness mejorado */
 @media (max-width: 991.98px) {
@@ -688,8 +689,16 @@ body:not(.registro-page) .navbar {
     }
     
     .hero-section {
-        padding-top: 3vh;
+        padding-top: 100px;
         min-height: 80vh;
+    }
+    .hero-section .lead {
+        font-size: 1.8rem;
+        margin-bottom: -1rem;
+    }
+    .hero-section h1.titulo-estilo {
+        font-size: 1.8rem !important; /* Asegurar que sobrescriba el inline */
+        margin-top: -1rem !important; /* Asegurar que sobrescriba el inline */
     }
     
     .navbar-brand {
@@ -716,6 +725,14 @@ body:not(.registro-page) .navbar {
     .btn-outline-primary {
         padding: 0.6rem 1.5rem;
         font-size: 0.9rem;
+    }
+    .hero-section .lead {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .hero-section h1.titulo-estilo {
+        font-size: 1.5rem !important;
+        margin-top: 0.5rem !important;
     }
 }
 
@@ -815,27 +832,31 @@ body:not(.registro-page) .navbar {
    ============================================== */
 @media (max-width: 768px) {
     html, body {
-        width: 100%;
-        max-width: 100%;
         overflow-x: hidden;
     }
 
-    /* capa fija que no genera bug en iOS / Android */
-    body::before {
-        content: '';
-        position: fixed;          /* fija respecto a viewport */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-image: url('img/fondo_minero.jpg');
-        background-position: center top;   /* cabeza siempre visible */
-        background-size: cover;            /* llena toda la pantalla */
-        z-index: -1;                       /* detrás del contenido */
-    }
-
-    /* color de respaldo mientras carga / scroll profundo */
     body {
+        background: url('img/fondo_minero.jpg') no-repeat center top / cover;
         background-color: #141c2b;
     }
+
+}
+
+/* Estilos para la imagen del mapa */
+.mapa-imagen-efecto {
+    box-shadow: 0 0 15px rgba(255, 210, 94, 0.8), 0 0 30px rgba(255, 210, 94, 0.5);
+    border: 1px solid var(--golden-medium); /* Opcional: un borde sutil */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+}
+@media (min-width: 769px) {
+    body {
+        background-attachment: fixed;
+    }
+}
+
+.hotel-logo {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+    mix-blend-mode: multiply;
 }
