@@ -573,6 +573,24 @@ hr {
     font-size: 3.2rem;
     letter-spacing: 0.12em;
     margin: 40px 0;
+}
+
+#conferencias-titulo .word-wrapper,
+#programa-titulo .word-wrapper,
+#hotel-hampton-titulo .word-wrapper,
+#hotel-victoria-titulo .word-wrapper {
+    display: inline-block;
+}
+
+#conferencias-titulo .word-wrapper span,
+#programa-titulo .word-wrapper span,
+#hotel-hampton-titulo .word-wrapper span,
+#hotel-victoria-titulo .word-wrapper span {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(-50px);
+    transition: opacity 0.7s, filter 0.7s, transform 0.7s;
+    display: inline-block; /* This is important for the transform to work */
     background-image: linear-gradient(to bottom, #ffe7ad, #b0863c 60%, #ffe7ad 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -580,26 +598,10 @@ hr {
     color: transparent;
 }
 
-#conferencias-titulo span,
-#programa-titulo span,
-#hotel-hampton-titulo span,
-#hotel-victoria-titulo span {
-    opacity: 0;
-    filter: blur(10px);
-    transform: translateY(-50px);
-    transition: opacity 0.7s, filter 0.7s, transform 0.7s;
-    background-image: inherit;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    display: inline-block;
-}
-
-#conferencias-titulo span.is-visible,
-#programa-titulo span.is-visible,
-#hotel-hampton-titulo span.is-visible,
-#hotel-victoria-titulo span.is-visible {
+#conferencias-titulo .word-wrapper span.is-visible,
+#programa-titulo .word-wrapper span.is-visible,
+#hotel-hampton-titulo .word-wrapper span.is-visible,
+#hotel-victoria-titulo .word-wrapper span.is-visible {
     opacity: 1;
     filter: blur(0px);
     transform: translateY(0);
@@ -666,7 +668,9 @@ body:not(.registro-page) .navbar {
 @media (max-width: 768px) {
     #titulo-principal,
     #conferencias-titulo,
-    #programa-titulo {
+    #programa-titulo,
+    #hotel-hampton-titulo,
+    #hotel-victoria-titulo {
         font-size: 2rem;
         margin: 20px 0;
     }
@@ -713,7 +717,9 @@ body:not(.registro-page) .navbar {
 @media (max-width: 576px) {
     #titulo-principal,
     #conferencias-titulo,
-    #programa-titulo {
+    #programa-titulo,
+    #hotel-hampton-titulo,
+    #hotel-victoria-titulo {
         font-size: 1.5rem;
     }
     
@@ -860,3 +866,31 @@ body:not(.registro-page) .navbar {
     display: block;
     mix-blend-mode: multiply;
 }
+
+/* Hotel Card Animation */
+.hotel-card-animated {
+    background-color: var(--midnight-blue-translucent);
+    color: var(--off-white);
+    border: 1px solid var(--golden-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hotel-card-animated:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 210, 94, 0.8);
+}
+
+.hotel-card-animated .card-title {
+    color: var(--golden-light);
+    font-family: 'Playfair Display', serif;
+}
+
+.hotel-card-animated .card-text {
+    color: var(--off-white);
+}
+
+
+.hotel-card-animated .hotel-logo {
+    mix-blend-mode: normal;
+}
+

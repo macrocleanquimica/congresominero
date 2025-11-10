@@ -170,13 +170,28 @@ function animateTitle(elementId) {
         });
     } else {
         const texto = titulo.textContent.trim();
-        titulo.textContent = '';
-        Array.from(texto).forEach((char, i) => {
-            const span = document.createElement('span');
-            span.textContent = char;
-            if (char === ' ') span.style.marginRight = '0.25em';
-            titulo.appendChild(span);
-            setTimeout(() => span.classList.add('is-visible'), i * 80);
+        titulo.textContent = ''; // Clear the original text
+
+        let charIndex = 0;
+        texto.split(' ').forEach((word, wordIdx) => {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'word-wrapper'; // Add a class to the word span
+
+            Array.from(word).forEach((char) => {
+                const charSpan = document.createElement('span');
+                charSpan.textContent = char;
+                wordSpan.appendChild(charSpan);
+                setTimeout(() => charSpan.classList.add('is-visible'), charIndex * 80);
+                charIndex++;
+            });
+
+            titulo.appendChild(wordSpan);
+
+            // Add a space after each word, except the last one
+            if (wordIdx < texto.split(' ').length - 1) {
+                const space = document.createTextNode(' ');
+                titulo.appendChild(space);
+            }
         });
     }
 }
