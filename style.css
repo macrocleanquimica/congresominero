@@ -896,3 +896,36 @@ body:not(.registro-page) .navbar {
     mix-blend-mode: normal;
 }
 
+/* ===== SOLUCIÓN DEFINITIVA PARA FOOTER EN TODOS LOS DISPOSITIVOS ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 0 !important; /* Elimina el padding-top del body */
+}
+
+.content-wrapper {
+    flex: 1;
+    padding-top: 100px; /* Solo el contenido tiene padding para el navbar */
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Asegurar que el fondo se mantenga en móviles */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding-top: 80px;
+    }
+}
