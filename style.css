@@ -18,6 +18,7 @@ body {
     line-height: 1.6;
     color: var(--off-white);
     background-color: var(--dark-blue-deep);
+    padding-top: 100px;
 }
 
 .fondo-responsivo {
@@ -43,8 +44,10 @@ body {
     border-bottom: 1px solid rgba(225, 185, 115, 0.3) !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
     backdrop-filter: blur(10px) !important;
-    position: sticky !important;
+    position: fixed !important;
     top: 0 !important;
+    left: 0;
+    right: 0;
     z-index: 1000 !important;
     padding: 0.8rem 0 !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -229,14 +232,14 @@ body {
 
 /* Hero Section */
 .hero-section {
-    margin-top: -60px;
     background: transparent; /* Muy claro */
     display: flex;
-    align-items: start;
+    align-items: center; /* Center vertically */
     justify-content: center;
     color: var(--off-white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    padding: 80px 0 2vh 0;
+    min-height: calc(100vh - 100px); /* Full viewport height minus navbar height */
+    padding: 2rem 0;
 }
 
 #titulo-principal {
@@ -693,8 +696,7 @@ body:not(.registro-page) .navbar {
     }
     
     .hero-section {
-        padding-top: 100px;
-        min-height: 80vh;
+        min-height: 50vh; /* Reduce height on mobile */
     }
     .hero-section .lead {
         font-size: 1.8rem;
