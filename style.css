@@ -22,8 +22,17 @@ body {
 }
 
 .fondo-responsivo {
-    background: url('img/fondo_minero.jpg') no-repeat center center;
+    background: 
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(20, 28, 43, 0.3) 30%,
+            rgba(10, 15, 25, 0.8) 70%,
+            rgba(5, 8, 15, 0.95) 100%
+        ),
+        url('img/fondo_minero.jpg') no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 @media (min-width: 769px) {
@@ -481,7 +490,15 @@ footer {
 
 /* Registro Page Specific Styles */
 .registro-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('img/fondo_minero.jpg') no-repeat center center/cover;
+    background: 
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(20, 28, 43, 0.3) 30%,
+            rgba(10, 15, 25, 0.8) 70%,
+            rgba(5, 8, 15, 0.95) 100%
+        ),
+        url('img/fondo_minero.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
@@ -844,10 +861,17 @@ body:not(.registro-page) .navbar {
     }
 
     body {
-        background: url('img/fondo_minero.jpg') no-repeat center top / cover;
+        background: 
+            radial-gradient(
+                ellipse at center,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(20, 28, 43, 0.3) 30%,
+                rgba(10, 15, 25, 0.8) 70%,
+                rgba(5, 8, 15, 0.95) 100%
+            ),
+            url('img/fondo_minero.jpg') no-repeat center top / cover;
         background-color: #141c2b;
     }
-
 }
 
 /* Estilos para la imagen del mapa */
