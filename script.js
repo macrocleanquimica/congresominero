@@ -1,5 +1,5 @@
 // ============================================================================
-//  CONGRESO NACIONAL DE MINERÍA DURANGO 2026  –  script.js  (versión corregida)
+//  CONGRESO NACIONAL DE MINERÍA DURANGO 2026  –  script.js  (VERSIÓN CORREGIDA)
 // ============================================================================
 
 // ===== NAVBAR ENHANCEMENTS =====
@@ -196,23 +196,12 @@ function animateTitle(elementId) {
     }
 }
 
-// Fade-in sections when they enter viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top < (window.innerHeight - 100) && rect.bottom >= 0;
-}
-
-function revealOnScroll() {
-    document.querySelectorAll('.fade-in').forEach(el => {
-        if (isInViewport(el)) el.classList.add('visible');
-    });
-}
-
-// ===== INITIALIZE EVERYTHING =====
+// Fade-in sections when they enter viewport - USANDO INTERSECTION OBSERVER API
 document.addEventListener('DOMContentLoaded', () => {
-// Logo visible al cargar la página
-  const logo = document.querySelector('.logo-entrada');
-  if (logo) logo.classList.add('visible');
+    // Logo visible al cargar la página
+    const logo = document.querySelector('.logo-entrada');
+    if (logo) logo.classList.add('visible');
+    
     // Title animations
     ['conferencias-titulo', 'programa-titulo', 'hotel-hampton-titulo', 'hotel-victoria-titulo'].forEach(id => {
         if (document.getElementById(id)) animateTitle(id);
@@ -220,17 +209,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar + logo
     initNavbarEnhancements();
+
+    // Intersection Observer para animaciones fade-in
+    const fadeInElements = document.querySelectorAll('.fade-in');
+
+    const observerOptions = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, observerOptions);
+
+    fadeInElements.forEach(el => {
+        observer.observe(el);
+    });
 });
 
-// Throttled scroll listener
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-    if (scrollTimeout) return;
-    scrollTimeout = setTimeout(() => {
-        scrollTimeout = null;
-        revealOnScroll();
-    }, 50);
-});
-
-window.addEventListener('load', revealOnScroll);
-window.addEventListener('resize', revealOnScroll);
+// Eliminar el listener de scroll y resize para revealOnScroll
+// let scrollTimeout;
+// window.addEventListener('scroll', () => {
+//     if (scrollTimeout) return;
+//     scrollTimeout = setTimeout(() => {
+//         scrollTimeout = null;
+//         revealOnScroll();
+//     }, 50);
+// });
+// window.addEventListener('load', revealOnScroll);
+// window.addEventListener('resize', revealOnScroll);
