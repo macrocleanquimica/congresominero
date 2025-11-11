@@ -262,6 +262,7 @@ body {
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1)); /* Clearer white outline */
 }
 
 .logo-entrada.visible {
@@ -274,6 +275,7 @@ body {
     font-size: 1.8rem;
     color: var(--bright-yellow-accent);
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(20, 28, 43, 0.8), 0 0 20px rgba(20, 28, 43, 0.6); /* Dark blue/black shadow for text */
 }
 
 /* General Headings */
@@ -1005,14 +1007,25 @@ footer {
 /* Media queries para responsividad */
 @media (max-width: 768px) {
     .logo-secundario {
-        max-width: 25%; /* Larger on smaller screens */
-        position: static; /* Remove absolute positioning */
-        transform: none;
-        margin: 10px auto; /* Add some margin and center */
+        max-width: 20%; /* Adjust size for mobile */
+        position: absolute; /* Keep absolute positioning */
+        bottom: 0; /* Keep bottom alignment */
+        transform: none; /* Remove any transform */
+        margin: 0; /* Remove margin */
+    }
+
+    .left-logo {
+        left: 5%; /* Adjust left position */
+    }
+
+    .right-logo {
+        right: 5%; /* Adjust right position */
     }
 
     #titulo-principal {
-        flex-direction: column; /* Stack logos vertically */
+        flex-direction: row; /* Keep logos in a row */
+        align-items: flex-end; /* Align secondary logos to the bottom of the main logo */
+        justify-content: center; /* Center the main logo */
     }
 }
 
