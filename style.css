@@ -313,9 +313,17 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section .lead {
     text-align: center !important;
     margin-top: 0;
-    margin-bottom: -4rem;
+    margin-bottom: 1rem; /* Positive margin to push content down */
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.titulo-estilo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--bright-yellow-accent);
+    margin-top: 1rem; /* Add margin-top */
+    margin-bottom: 0.5rem;
 }
 
 /* Buttons */
@@ -338,8 +346,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-outline-primary {
-    color: var(--dark-blue-deep);
-    background-color: var(--golden-light);
+    color: var(--golden-light); /* Changed text color to golden */
+    background-color: transparent;
     border-color: var(--golden-light);
     font-weight: bold;
     padding: 0.8rem 2rem;
@@ -586,7 +594,9 @@ hr {
 #conferencias-titulo,
 #programa-titulo,
 #hotel-hampton-titulo,
-#hotel-victoria-titulo {
+#hotel-victoria-titulo,
+#hotel-gobernador-titulo,
+#otros-hoteles-titulo {
     text-align: center;
     font-family: 'Cinzel', 'Playfair Display', serif;
     font-weight: 700;
@@ -598,14 +608,16 @@ hr {
 #conferencias-titulo .word-wrapper,
 #programa-titulo .word-wrapper,
 #hotel-hampton-titulo .word-wrapper,
-#hotel-victoria-titulo .word-wrapper {
+#hotel-victoria-titulo .word-wrapper,
+#hotel-gobernador-titulo .word-wrapper {
     display: inline-block;
 }
 
 #conferencias-titulo .word-wrapper span,
 #programa-titulo .word-wrapper span,
 #hotel-hampton-titulo .word-wrapper span,
-#hotel-victoria-titulo .word-wrapper span {
+#hotel-victoria-titulo .word-wrapper span,
+#hotel-gobernador-titulo .word-wrapper span {
     opacity: 0;
     filter: blur(10px);
     transform: translateY(-50px);
@@ -621,7 +633,8 @@ hr {
 #conferencias-titulo .word-wrapper span.is-visible,
 #programa-titulo .word-wrapper span.is-visible,
 #hotel-hampton-titulo .word-wrapper span.is-visible,
-#hotel-victoria-titulo .word-wrapper span.is-visible {
+#hotel-victoria-titulo .word-wrapper span.is-visible,
+#hotel-gobernador-titulo .word-wrapper span.is-visible {
     opacity: 1;
     filter: blur(0px);
     transform: translateY(0);
@@ -690,7 +703,8 @@ body:not(.registro-page) .navbar {
     #conferencias-titulo,
     #programa-titulo,
     #hotel-hampton-titulo,
-    #hotel-victoria-titulo {
+    #hotel-victoria-titulo,
+    #hotel-gobernador-titulo {
         font-size: 2rem;
         margin: 20px 0;
     }
@@ -738,7 +752,8 @@ body:not(.registro-page) .navbar {
     #conferencias-titulo,
     #programa-titulo,
     #hotel-hampton-titulo,
-    #hotel-victoria-titulo {
+    #hotel-victoria-titulo,
+    #hotel-gobernador-titulo {
         font-size: 1.5rem;
     }
     
@@ -887,10 +902,14 @@ body:not(.registro-page) .navbar {
 }
 
 .hotel-logo {
-    max-width: 200px;
+    width: 200px; /* Fixed width */
+    height: 180px; /* Reduced height */
     margin: 0 auto;
     display: block;
-    mix-blend-mode: multiply;
+    background-color: white; /* Add white background */
+    padding: 10px; /* Add padding to create a square effect */
+    border-radius: 8px; /* Ensure rounded corners */
+    object-fit: contain; /* Ensure image scales within the box */
 }
 
 /* Hotel Card Animation */
@@ -951,5 +970,65 @@ footer {
 @media (max-width: 768px) {
     .content-wrapper {
         padding-top: 80px;
+    }
+}
+
+/* Estilos para los logos secundarios */
+.logo-secundario {
+    max-width: 15%; /* Adjust as needed */
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    z-index: 1; /* Ensure they are above other content if needed */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); /* Subtle shadow */
+}
+
+.left-logo {
+    left: 0;
+}
+
+.right-logo {
+    right: 0;
+}
+
+/* Ajustes para el contenedor principal de los logos */
+#titulo-principal {
+    position: relative; /* Needed for absolute positioning of secondary logos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Center the main logo container */
+    width: 100%; /* Take full width to allow secondary logos to position */
+    max-width: 800px; /* Limit width on larger screens */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .logo-secundario {
+        max-width: 25%; /* Larger on smaller screens */
+        position: static; /* Remove absolute positioning */
+        transform: none;
+        margin: 10px auto; /* Add some margin and center */
+    }
+
+    #titulo-principal {
+        flex-direction: column; /* Stack logos vertically */
+    }
+}
+
+
+.logo-oscuro {
+  /* Esto invierte los colores, blanco se vuelve negro y viceversa. */
+  /* Funciona mejor si el logo original es solo blanco o negro. */
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Estilos para la imagen del Hotel Gobernador */
+@media (min-width: 992px) { /* Apply only on large devices (PC) */
+    .hotel-gobernador-img {
+        max-width: 70%; /* Make the image smaller */
+        margin-left: auto; /* Center the image within its column */
+        margin-right: auto;
+        display: block; /* Ensure margin auto works */
     }
 }

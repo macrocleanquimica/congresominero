@@ -181,7 +181,9 @@ function animateTitle(elementId) {
                 const charSpan = document.createElement('span');
                 charSpan.textContent = char;
                 wordSpan.appendChild(charSpan);
-                setTimeout(() => charSpan.classList.add('is-visible'), charIndex * 80);
+                setTimeout(() => {
+                    charSpan.classList.add('is-visible');
+                }, charIndex * 80);
                 charIndex++;
             });
 
@@ -203,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logo) logo.classList.add('visible');
     
     // Title animations
-    ['conferencias-titulo', 'programa-titulo', 'hotel-hampton-titulo', 'hotel-victoria-titulo'].forEach(id => {
+    ['conferencias-titulo', 'programa-titulo', 'hotel-hampton-titulo', 'hotel-victoria-titulo', 'hotel-gobernador-titulo', 'otros-hoteles-titulo'].forEach(id => {
         if (document.getElementById(id)) animateTitle(id);
     });
 

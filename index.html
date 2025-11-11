@@ -19,21 +19,8 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-        }
-
-        #hoteles .hotel-logo {
-            max-height: 120px;
-            width: auto;
-            object-fit: contain;
-            margin: 0 auto;
-        }
-
-        #hoteles .card-text {
-            flex-grow: 1;
-        }
-        
-        .hotel-logo {
-            border-radius: 8px;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
         }
     </style>
 </head>
@@ -94,9 +81,11 @@
             <div class="container">
                 <p class="lead">Del 26 al 28 de Agosto 2026</p>
                 <div id="titulo-principal" class="display-3 fw-bold">
+                    <img src="img/logo_aimmgm_400.png" alt="Logo AIMMGM" class="logo-secundario left-logo">
                     <img src="img/Logo_Condensado.png" alt="Logo del Congreso" class="logo-entrada">
+                    <img src="img/comite_de_damas.png" alt="Logo Comité de Damas" class="logo-secundario right-logo logo-oscuro">
                 </div>
-                <h1 class="titulo-estilo" style="font-size:2.5rem; margin-top:-2.5rem;">EQUIDAD EN LA MINERÍA</h1>
+                <h1 class="titulo-estilo">EQUIDAD EN LA MINERÍA</h1>
                 <a href="registro.html" class="btn btn-primary btn-lg mt-3">Regístrate ahora</a>
             </div>
         </header>
@@ -373,6 +362,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="card hotel-card-animated">
+                            <div class="card-body">
+                                <h5 class="card-title">Hotel Gobernador</h5>
+                                <p class="card-text">Descripción breve del hotel y sus servicios.</p>
+                                <img src="img/hotel_gobernador.png" alt="Logo Hotel Gobernador" class="img-fluid mb-3 hotel-logo">
+                                <a href="hotel-gobernador.html" class="btn btn-outline-primary">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="otros-hoteles.html" class="btn btn-outline-primary btn-lg">Ver otras opciones de hoteles</a>
                 </div>
             </div>
         </section>
